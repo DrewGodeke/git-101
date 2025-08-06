@@ -1,27 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrew Godeke | Portfolio</title>
+
+  <!-- Devicon CSS for skill icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+  <!-- Your CSS file -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
 <nav class="navbar">
   <ul>
     <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-    <button id="theme-toggle">☽</button>
-
+  <button id="theme-toggle">☽</button>
 </nav>
 
 
 <header>
   <h1>Welcome to My Portfolio</h1>
- <p style="font-style: italic; color: var(--header-text); margin-top: 0.5rem;">
-  Building cool things, one line of code at a time.
-</p>
-<img
-  src="assets/profile.jpg"
-  alt="Andrew Godeke"
-  class="profile-photo"
-/>
-
+  <p style="font-style: italic; color: var(--header-text); margin-top: 0.5rem;">
+    Building cool things, one line of code at a time.
+  </p>
+  <img
+    src="assets/profile.jpg"
+    alt="Andrew Godeke"
+    class="profile-photo"
+  />
 </header>
-
 
 <section id="about">
   <h2>About Me</h2>
@@ -30,22 +44,43 @@
   </p>
 </section>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <ul>
-    <li>
-  <a href="https://github.com/DrewGodeke/rails-shopwise" target="_blank" rel="noopener">
-    Rails Shopwise
-  </a> – A feature-rich e-commerce web app built with Ruby on Rails, including product browsing, shopping cart, and admin panel.
-</li>
-
-    <li>
-  <a href="https://github.com/DrewGodeke/rails-airbnboo" target="_blank" rel="noopener">
-    Rails Airbnboo
-  </a> – An Airbnb-style platform built with Ruby on Rails, guiding thrill seekers to discover and book spooky, haunted-themed stays.
-</li>
+<section id="skills">
+  <h2>Skills</h2>
+  <ul class="skills-list">
+    <li><i class="devicon-html5-plain colored"></i> HTML5</li>
+    <li><i class="devicon-css3-plain colored"></i> CSS3</li>
+    <li><i class="devicon-javascript-plain colored"></i> JavaScript</li>
+    <li><i class="devicon-ruby-plain colored"></i> Ruby</li>
+    <li><i class="devicon-rails-plain colored"></i> Ruby on Rails</li>
+    <li><i class="devicon-postgresql-plain colored"></i> SQL / PostgreSQL</li>
+    <li><i class="devicon-git-plain colored"></i> Git</li>
+    <li><i class="devicon-github-original"></i> GitHub</li>
+    <li><i class="devicon-heroku-original colored"></i> Heroku</li>
+    <li><i class="devicon-figma-plain colored"></i> Figma</li>
   </ul>
 </section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <h3>Rails Shopwise</h3>
+      <p>A feature-rich e-commerce app built with Ruby on Rails. Includes product browsing, shopping cart, and admin panel.</p>
+      <div class="project-links">
+        <a href="https://github.com/DrewGodeke/rails-shopwise" target="_blank">GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Rails Airbnboo</h3>
+      <p>An Airbnb-style app for haunted, spooky-themed stays. Users can browse, book, and host creepy accommodations.</p>
+      <div class="project-links">
+        <a href="https://github.com/DrewGodeke/rails-airbnboo" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section id="contact">
   <h2>Contact</h2>
@@ -60,5 +95,6 @@
     document.body.classList.toggle('dark-mode');
   });
 </script>
+
 </body>
 </html>
