@@ -8,15 +8,14 @@
   <!-- Devicon CSS for skill icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
-  <!-- Your CSS file -->
-  <link rel="stylesheet" href="styles.css" />
+  <%= stylesheet_link_tag "application", media: "all" %>
 </head>
 
 <body>
 
 <nav class="navbar">
   <ul>
-    <li><a href="#about">About</a></li>
+    <li><%= link_to 'About', about_path %></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -24,17 +23,12 @@
   <button id="theme-toggle">☽</button>
 </nav>
 
-
 <header>
   <h1>Welcome to My Portfolio</h1>
   <p style="font-style: italic; color: var(--header-text); margin-top: 0.5rem;">
     Building cool things, one line of code at a time.
   </p>
-  <img
-    src="assets/profile.jpg"
-    alt="Andrew Godeke"
-    class="profile-photo"
-  />
+  <%= image_tag "profile.jpg", alt: "Andrew Godeke", class: "profile-photo" %>
 </header>
 
 <section id="about">
@@ -80,7 +74,6 @@
     </div>
   </div>
 </section>
-
 
 <section id="contact">
   <h2>Contact</h2>

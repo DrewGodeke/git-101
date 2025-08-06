@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   # Root homepage
   root "pages#home"
 
+  # About page
+  get "about", to: "pages#about"
+
   # Project routes
   get "projects", to: "projects#index"
   get "projects/:id", to: "projects#show", as: "project"
