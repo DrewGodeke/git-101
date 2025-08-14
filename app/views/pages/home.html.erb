@@ -14,13 +14,12 @@
 <body>
 
 <nav class="navbar">
-  <ul>
-    <li><%= link_to 'About', about_path %></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
   <button id="theme-toggle">☽</button>
+  <div class="navbar-buttons">
+    <%= link_to 'About', about_path, class: 'navbar-btn' %>
+    <%= link_to 'Projects', projects_path, class: 'navbar-btn' %>
+    <%= link_to 'Contact', contact_path, class: 'navbar-btn' %>
+  </div>
 </nav>
 
 <header>
@@ -86,6 +85,13 @@
   const toggleBtn = document.getElementById('theme-toggle');
   toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
+
+    // Optional: Change moon icon when in dark mode
+    if (document.body.classList.contains('dark-mode')) {
+      toggleBtn.textContent = '☀️'; // Sun icon for light mode toggle
+    } else {
+      toggleBtn.textContent = '☽'; // Moon icon for dark mode toggle
+    }
   });
 </script>
 

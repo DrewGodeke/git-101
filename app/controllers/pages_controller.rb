@@ -4,4 +4,10 @@ class PagesController < ApplicationController
 
   def about
   end
+
+  def projects  # Keep this method
+  end
+
+  def contact
+  end
 end

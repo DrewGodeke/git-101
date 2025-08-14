@@ -5,10 +5,15 @@ Rails.application.routes.draw do
   # About page
   get "about", to: "pages#about"
 
-  # Project routes
-  get "projects", to: "projects#index"
+  # Projects page - use pages controller
+  get "projects", to: "pages#projects"  # Change back to pages#projects
+
+  # Add contact page
+  get "contact", to: "pages#contact"
+
+  # Individual project routes (if you still need them)
   get "projects/:id", to: "projects#show", as: "project"
 
-  # Health check (leave this if needed)
+  # Health check
   get "up" => "rails/health#show", as: :rails_health_check
 end

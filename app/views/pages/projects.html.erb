@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Andrew Godeke</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <%= stylesheet_link_tag "application", media: "all" %>
+</head>
+
+<body>
+<nav class="navbar">
+  <div class="navbar-left">
+    <%= link_to root_path, class: 'home-btn', title: 'Home' do %>
+      <svg class="home-icon" viewBox="0 0 24 24">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+      </svg>
+    <% end %>
+    <button id="theme-toggle">☽</button>
+  </div>
+  <div class="navbar-buttons">
+    <%= link_to 'About', about_path, class: 'navbar-btn' %>
+    <%= link_to 'Projects', projects_path, class: 'navbar-btn' %>
+    <%= link_to 'Contact', contact_path, class: 'navbar-btn' %>
+  </div>
+</nav>
+
+<header>
+  <h1>My Projects</h1>
+  <p style="font-style: italic; color: var(--header-text); margin-top: 0.5rem;">
+    Check out some of the cool things I've built.
+  </p>
+</header>
+
+<section id="projects">
+  <h2>Featured Projects</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <h3>Rails Shopwise</h3>
+      <p>A feature-rich e-commerce app built with Ruby on Rails. Includes product browsing, shopping cart, and admin panel.</p>
+      <div class="project-links">
+        <a href="https://github.com/DrewGodeke/rails-shopwise" target="_blank">GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Rails Airbnboo</h3>
+      <p>An Airbnb-style app for haunted, spooky-themed stays. Users can browse, book, and host creepy accommodations.</p>
+      <div class="project-links">
+        <a href="https://github.com/DrewGodeke/rails-airbnboo" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const toggleBtn = document.getElementById('theme-toggle');
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    if (document.body.classList.contains('dark-mode')) {
+      toggleBtn.textContent = '☀️';
+    } else {
+      toggleBtn.textContent = '☽';
+    }
+  });
+</script>
+</body>
+</html>

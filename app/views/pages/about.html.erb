@@ -1,2 +1,74 @@
-<h1>About Me</h1>
-<p>Hi, I'm a web developer based in Montreal. I love building clean and functional websites.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Andrew Godeke</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <%= stylesheet_link_tag "application", media: "all" %>
+</head>
+
+<body>
+<nav class="navbar">
+  <div class="navbar-left">
+    <%= link_to root_path, class: 'home-btn', title: 'Home' do %>
+      <svg class="home-icon" viewBox="0 0 24 24">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+      </svg>
+    <% end %>
+    <button id="theme-toggle">☽</button>
+  </div>
+  <div class="navbar-buttons">
+    <%= link_to 'About', about_path, class: 'navbar-btn' %>
+    <%= link_to 'Projects', projects_path, class: 'navbar-btn' %>
+    <%= link_to 'Contact', contact_path, class: 'navbar-btn' %>
+  </div>
+</nav>
+
+<header>
+  <h1>About Me</h1>
+  <p style="font-style: italic; color: var(--header-text); margin-top: 0.5rem;">
+    Get to know the developer behind the code.
+  </p>
+  <%= image_tag "profile.jpg", alt: "Andrew Godeke", class: "profile-photo" %>
+</header>
+
+<section id="about">
+  <h2>My Journey</h2>
+  <p>Native Canadian and junior web developer with a full-stack development background from Le Wagon. Skilled in HTML,
+     CSS, Ruby, SQL, and JavaScript, with experience in both front-end and back-end development.
+  </p>
+  <p>I'm passionate about creating clean, functional web applications that solve real-world problems. When I'm not coding,
+     you can find me exploring new technologies and continuously learning to improve my craft.
+  </p>
+</section>
+
+<section id="skills">
+  <h2>Skills & Technologies</h2>
+  <ul class="skills-list">
+    <li><i class="devicon-html5-plain colored"></i> HTML5</li>
+    <li><i class="devicon-css3-plain colored"></i> CSS3</li>
+    <li><i class="devicon-javascript-plain colored"></i> JavaScript</li>
+    <li><i class="devicon-ruby-plain colored"></i> Ruby</li>
+    <li><i class="devicon-rails-plain colored"></i> Ruby on Rails</li>
+    <li><i class="devicon-postgresql-plain colored"></i> SQL / PostgreSQL</li>
+    <li><i class="devicon-git-plain colored"></i> Git</li>
+    <li><i class="devicon-github-original"></i> GitHub</li>
+    <li><i class="devicon-heroku-original colored"></i> Heroku</li>
+    <li><i class="devicon-figma-plain colored"></i> Figma</li>
+  </ul>
+</section>
+
+<script>
+  const toggleBtn = document.getElementById('theme-toggle');
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    if (document.body.classList.contains('dark-mode')) {
+      toggleBtn.textContent = '☀️';
+    } else {
+      toggleBtn.textContent = '☽';
+    }
+  });
+</script>
+</body>
+</html>
