@@ -1,18 +1,74 @@
-@import "home";
+/* === GLOBAL RESETS === */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  font-family: 'Inter', sans-serif;
+  background-color: #fff;
+  color: #333;
 }
 
-/* === HERO SECTION === */
+/* === NAVBAR === */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
+
+.navbar-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.navbar-btn:hover {
+  color: #007acc;
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #f9f9f9;
+  color: #555;
+}
+
+/* === FIX: Prevent global reset from breaking navbar === */
+.navbar,
+.navbar * {
+  box-sizing: content-box !important;
+  margin: initial !important;
+  padding: initial !important;
+}
+
+/* === HERO SECTION (GLOBAL BASE STYLES) === */
 .hero {
   height: 100vh;
   position: relative;
   overflow: hidden;
   display: flex;
+  width: 100vw;
 }
 
 /* Left side - Content */
@@ -30,7 +86,7 @@ body.dark-mode .hero-content {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
 }
 
-/* Background pattern */
+/* Background pattern on hero-content */
 .hero-content::before {
   content: '';
   position: absolute;
@@ -53,7 +109,7 @@ body.dark-mode .hero-content {
 }
 
 .hero-greeting {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 900;
   color: #000;
   margin-bottom: 0.5rem;
@@ -65,7 +121,7 @@ body.dark-mode .hero-greeting {
 }
 
 .hero-name {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 300;
   color: #666;
   margin-bottom: 2rem;
@@ -78,7 +134,7 @@ body.dark-mode .hero-name {
 }
 
 .hero-description {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   line-height: 1.6;
   color: #333;
   margin-bottom: 3rem;
@@ -89,6 +145,7 @@ body.dark-mode .hero-description {
   color: #e0e0e0;
 }
 
+/* CTA BUTTON */
 .cta-button {
   background: #333;
   color: white;
@@ -137,8 +194,8 @@ body.dark-mode .hero-image {
 }
 
 .profile-image {
-  width: 300px;
-  height: 300px;
+  width: clamp(200px, 25vw, 300px);
+  height: clamp(200px, 25vw, 300px);
   border-radius: 50%;
   object-fit: cover;
   border: 5px solid white;
@@ -150,7 +207,7 @@ body.dark-mode .hero-image {
   transform: scale(1.05);
 }
 
-/* === RESPONSIVE === */
+/* === RESPONSIVE STYLES (Shared) === */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
@@ -159,7 +216,9 @@ body.dark-mode .hero-image {
 
   .hero-image {
     clip-path: none;
-    padding: 2rem;
+    padding: 1rem;
+    margin-top: 2rem;
+    width: 100%;
   }
 
   .hero-greeting,
@@ -168,8 +227,8 @@ body.dark-mode .hero-image {
   }
 
   .profile-image {
-    width: 200px;
-    height: 200px;
+    width: clamp(150px, 30vw, 200px);
+    height: clamp(150px, 30vw, 200px);
   }
 
   .navbar {
@@ -184,4 +243,54 @@ body.dark-mode .hero-image {
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
   }
+}
+
+@media (max-width: 480px) {
+  .navbar-buttons {
+    flex-direction: column;
+    gap: 0.25rem;
+    align-items: flex-end;
+  }
+
+  .navbar-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* === DARK MODE THEME === */
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.dark-mode .navbar {
+  background: #1e1e1e;
+  box-shadow: none;
+}
+
+body.dark-mode .navbar-btn {
+  color: #eee;
+}
+
+body.dark-mode .navbar-btn:hover {
+  color: #00aaff;
+}
+
+body.dark-mode .home-icon path {
+  fill: #eee;
+}
+
+/* Scrollbar styling for dark mode */
+body.dark-mode::-webkit-scrollbar {
+  width: 8px;
+}
+
+body.dark-mode::-webkit-scrollbar-track {
+  background: #222;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb {
+  background-color: #00aaff;
+  border-radius: 10px;
 }

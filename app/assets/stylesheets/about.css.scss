@@ -1,0 +1,123 @@
+/* === ABOUT PAGE HERO STYLES === */
+.hero-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f4f7f6 0%, #e0eafc 100%);
+  text-align: center;
+  padding: 3rem 2rem;
+  min-height: 70vh;
+}
+
+.hero-about .content-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0;
+  background: transparent;
+}
+
+.hero-about .hero-greeting {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.hero-about .hero-name {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #666;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.hero-about .hero-description {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+/* Profile Image */
+.profile-image {
+  width: clamp(180px, 25vw, 250px);
+  height: clamp(180px, 25vw, 250px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+/* About and Skills sections */
+#about,
+#skills {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+#skills h2,
+#about h2 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-left: 0;
+}
+
+.skills-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #444;
+  font-size: 1rem;
+}
+
+.skills-list li i {
+  font-size: 1.5rem;
+}
+
+/* Dark mode overrides */
+body.dark-mode .hero-about {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #eee;
+}
+
+body.dark-mode #about,
+body.dark-mode #skills {
+  color: #ccc;
+}
+
+body.dark-mode .skills-list li {
+  color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-about .hero-greeting {
+    font-size: 2.2rem;
+  }
+  .hero-about .hero-name {
+    font-size: 2rem;
+  }
+  #about, #skills {
+    padding: 0 0.5rem;
+    margin: 1.5rem auto;
+  }
+}

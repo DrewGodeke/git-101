@@ -14,7 +14,6 @@
 <body>
 
 <nav class="navbar">
-  <!-- Left side: Home button + Theme toggle -->
   <div class="navbar-left">
     <%= link_to root_path, class: 'home-btn', title: 'Home' do %>
       <svg class="home-icon" viewBox="0 0 24 24">
@@ -24,7 +23,6 @@
     <button id="theme-toggle" title="Toggle dark mode">☽</button>
   </div>
 
-  <!-- Right side: Navigation buttons -->
   <div class="navbar-buttons">
     <%= link_to 'About', about_path, class: 'navbar-btn' %>
     <%= link_to 'Projects', projects_path, class: 'navbar-btn' %>
@@ -32,9 +30,8 @@
   </div>
 </nav>
 
-<!-- Hero Section -->
-<section class="hero">
-  <!-- Left side - Content -->
+<!-- Hero Section with home modifier -->
+<section class="hero hero-home">
   <div class="hero-content">
     <div class="content-wrapper">
       <h1 class="hero-greeting">HI, I'M</h1>
@@ -46,7 +43,6 @@
     </div>
   </div>
 
-  <!-- Right side - Image -->
   <div class="hero-image">
     <%= image_tag "profile.jpg", alt: "Andrew Godeke", class: "profile-image" %>
   </div>
@@ -56,13 +52,11 @@
   const toggleBtn = document.getElementById('theme-toggle');
   toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
-
-    // Change icon when toggling themes
     if (document.body.classList.contains('dark-mode')) {
-      toggleBtn.textContent = '☀️'; // Sun icon for light mode toggle
+      toggleBtn.textContent = '☀️';
       toggleBtn.title = 'Switch to light mode';
     } else {
-      toggleBtn.textContent = '☽'; // Moon icon for dark mode toggle
+      toggleBtn.textContent = '☽';
       toggleBtn.title = 'Switch to dark mode';
     }
   });
