@@ -14,7 +14,17 @@
 <body>
 
 <nav class="navbar">
-  <button id="theme-toggle">☽</button>
+  <!-- Left side: Home button + Theme toggle -->
+  <div class="navbar-left">
+    <%= link_to root_path, class: 'home-btn', title: 'Home' do %>
+      <svg class="home-icon" viewBox="0 0 24 24">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+      </svg>
+    <% end %>
+    <button id="theme-toggle" title="Toggle dark mode">☽</button>
+  </div>
+
+  <!-- Right side: Navigation buttons -->
   <div class="navbar-buttons">
     <%= link_to 'About', about_path, class: 'navbar-btn' %>
     <%= link_to 'Projects', projects_path, class: 'navbar-btn' %>
@@ -22,63 +32,24 @@
   </div>
 </nav>
 
-<header>
-  <h1>Welcome to My Portfolio</h1>
-  <p style="font-style: italic; color: var(--header-text); margin-top: 0.5rem;">
-    Building cool things, one line of code at a time.
-  </p>
-  <%= image_tag "profile.jpg", alt: "Andrew Godeke", class: "profile-photo" %>
-</header>
-
-<section id="about">
-  <h2>About Me</h2>
-  <p>Native Canadian and junior web developer with a full-stack development background from Le Wagon. Skilled in HTML,
-     CSS, Ruby, SQL, and JavaScript, with experience in both front-end and back-end development.
-  </p>
-</section>
-
-<section id="skills">
-  <h2>Skills</h2>
-  <ul class="skills-list">
-    <li><i class="devicon-html5-plain colored"></i> HTML5</li>
-    <li><i class="devicon-css3-plain colored"></i> CSS3</li>
-    <li><i class="devicon-javascript-plain colored"></i> JavaScript</li>
-    <li><i class="devicon-ruby-plain colored"></i> Ruby</li>
-    <li><i class="devicon-rails-plain colored"></i> Ruby on Rails</li>
-    <li><i class="devicon-postgresql-plain colored"></i> SQL / PostgreSQL</li>
-    <li><i class="devicon-git-plain colored"></i> Git</li>
-    <li><i class="devicon-github-original"></i> GitHub</li>
-    <li><i class="devicon-heroku-original colored"></i> Heroku</li>
-    <li><i class="devicon-figma-plain colored"></i> Figma</li>
-  </ul>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="project-grid">
-    <div class="project-card">
-      <h3>Rails Shopwise</h3>
-      <p>A feature-rich e-commerce app built with Ruby on Rails. Includes product browsing, shopping cart, and admin panel.</p>
-      <div class="project-links">
-        <a href="https://github.com/DrewGodeke/rails-shopwise" target="_blank">GitHub</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <h3>Rails Airbnboo</h3>
-      <p>An Airbnb-style app for haunted, spooky-themed stays. Users can browse, book, and host creepy accommodations.</p>
-      <div class="project-links">
-        <a href="https://github.com/DrewGodeke/rails-airbnboo" target="_blank">GitHub</a>
-      </div>
+<!-- Hero Section -->
+<section class="hero">
+  <!-- Left side - Content -->
+  <div class="hero-content">
+    <div class="content-wrapper">
+      <h1 class="hero-greeting">HI, I'M</h1>
+      <h2 class="hero-name">ANDREW</h2>
+      <p class="hero-description">
+        I'm a full-stack web developer with a global edge and a creative mind. I'm here to build meaningful, creative, and human-focused tech. Let's create something impactful.
+      </p>
+      <%= link_to 'START!', about_path, class: 'cta-button' %>
     </div>
   </div>
-</section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:legodeke@hotmail.com">legodeke@hotmail.com</a></p>
-  <p>GitHub: <a href="https://github.com/DrewGodeke" target="_blank" rel="noopener">github.com/DrewGodeke</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/andrew-g-7260879b/" target="_blank" rel="noopener">linkedin.com/in/andrew-g-7260879b/</a></p>
+  <!-- Right side - Image -->
+  <div class="hero-image">
+    <%= image_tag "profile.jpg", alt: "Andrew Godeke", class: "profile-image" %>
+  </div>
 </section>
 
 <script>
@@ -86,11 +57,13 @@
   toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 
-    // Optional: Change moon icon when in dark mode
+    // Change icon when toggling themes
     if (document.body.classList.contains('dark-mode')) {
       toggleBtn.textContent = '☀️'; // Sun icon for light mode toggle
+      toggleBtn.title = 'Switch to light mode';
     } else {
       toggleBtn.textContent = '☽'; // Moon icon for dark mode toggle
+      toggleBtn.title = 'Switch to dark mode';
     }
   });
 </script>
