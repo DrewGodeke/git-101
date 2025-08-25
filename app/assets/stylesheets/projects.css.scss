@@ -1,0 +1,311 @@
+/* === PROJECTS PAGE STYLES === */
+
+/* Header Section */
+header {
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+body.dark-mode header {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+/* Background pattern for header */
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(0, 122, 204, 0.1) 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, rgba(0, 122, 204, 0.1) 2px, transparent 2px);
+  background-size: 50px 50px;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+header h1 {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 900;
+  color: #000;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+body.dark-mode header h1 {
+  color: #fff;
+}
+
+header p {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: #666 !important;
+  position: relative;
+  z-index: 2;
+}
+
+body.dark-mode header p {
+  color: #ccc !important;
+}
+
+/* Projects Section */
+#projects {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#projects h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+body.dark-mode #projects h2 {
+  color: #eee;
+}
+
+/* Project Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Project Cards */
+.project-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #007acc 0%, #00aaff 100%);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .project-card {
+  background: #2d2d2d;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .project-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+body.dark-mode .project-card h3 {
+  color: #fff;
+}
+
+.project-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+body.dark-mode .project-card p {
+  color: #ccc;
+}
+
+/* Project Links */
+.project-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.project-links a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-links a:hover {
+  background: #555;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+body.dark-mode .project-links a {
+  background: #007acc;
+}
+
+body.dark-mode .project-links a:hover {
+  background: #00aaff;
+  color: white;
+}
+
+/* Navbar Left Styles */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.home-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: transparent;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.home-btn:hover {
+  background: rgba(0, 122, 204, 0.1);
+}
+
+body.dark-mode .home-btn:hover {
+  background: rgba(0, 170, 255, 0.1);
+}
+
+.home-icon {
+  width: 24px;
+  height: 24px;
+  fill: #333;
+  transition: fill 0.3s ease;
+}
+
+body.dark-mode .home-icon {
+  fill: #eee;
+}
+
+.home-btn:hover .home-icon {
+  fill: #007acc;
+}
+
+body.dark-mode .home-btn:hover .home-icon {
+  fill: #00aaff;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+  background: transparent;
+  border: 2px solid #333;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background: #333;
+  color: white;
+}
+
+body.dark-mode #theme-toggle {
+  border-color: #eee;
+  color: #eee;
+}
+
+body.dark-mode #theme-toggle:hover {
+  background: #eee;
+  color: #333;
+}
+
+/* CSS Variables for consistency */
+:root {
+  --header-text: #666;
+  --accent-color: #007acc;
+  --accent-hover: #00aaff;
+}
+
+body.dark-mode {
+  --header-text: #ccc;
+  --accent-color: #00aaff;
+  --accent-hover: #007acc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    padding: 3rem 1rem 2rem;
+  }
+
+  #projects {
+    padding: 3rem 1rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+  }
+
+  .navbar-left {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  #projects {
+    padding: 2rem 1rem;
+  }
+
+  .project-card {
+    padding: 1.25rem;
+  }
+
+  .project-links {
+    flex-direction: column;
+  }
+
+  .project-links a {
+    text-align: center;
+  }
+}

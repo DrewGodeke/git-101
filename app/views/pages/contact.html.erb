@@ -9,46 +9,60 @@
 </head>
 
 <body>
-<nav class="navbar">
-  <div class="navbar-left">
-    <%= link_to root_path, class: 'home-btn', title: 'Home' do %>
-      <svg class="home-icon" viewBox="0 0 24 24">
-        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-      </svg>
-    <% end %>
-    <button id="theme-toggle">☽</button>
-  </div>
-  <div class="navbar-buttons">
-    <%= link_to 'About', about_path, class: 'navbar-btn' %>
-    <%= link_to 'Projects', projects_path, class: 'navbar-btn' %>
-    <%= link_to 'Contact', contact_path, class: 'navbar-btn' %>
-  </div>
-</nav>
+  <!-- === NAVBAR === -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <%= link_to root_path, class: 'home-btn', title: 'Home' do %>
+        <svg class="home-icon" viewBox="0 0 24 24">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </svg>
+      <% end %>
+      <button id="theme-toggle">☽</button>
+    </div>
+    <div class="navbar-buttons">
+      <%= link_to 'About', about_path, class: 'navbar-btn' %>
+      <%= link_to 'Projects', projects_path, class: 'navbar-btn' %>
+      <%= link_to 'Contact', contact_path, class: 'navbar-btn' %>
+    </div>
+  </nav>
 
-<header>
-  <h1>Get In Touch</h1>
-  <p style="font-style: italic; color: var(--header-text); margin-top: 0.5rem;">
-    Let's connect and build something amazing together.
-  </p>
-</header>
+  <!-- === CONTACT HERO SECTION === -->
+  <section class="hero-about">
+    <div class="content-wrapper">
+      <h1 class="hero-greeting">Get In Touch</h1>
+      <p class="hero-description">
+        Let's connect and build something amazing together.
+      </p>
 
-<section id="contact">
-  <h2>Contact Information</h2>
-  <p>Email: <a href="mailto:legodeke@hotmail.com">legodeke@hotmail.com</a></p>
-  <p>GitHub: <a href="https://github.com/DrewGodeke" target="_blank" rel="noopener">github.com/DrewGodeke</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/andrew-g-7260879b/" target="_blank" rel="noopener">linkedin.com/in/andrew-g-7260879b/</a></p>
-</section>
+      <section id="contact">
+        <h2>Contact Information</h2>
+        <p>Email: <a href="mailto:legodeke@hotmail.com">legodeke@hotmail.com</a></p>
+        <p>GitHub:
+          <a href="https://github.com/DrewGodeke" target="_blank" rel="noopener">
+            github.com/DrewGodeke
+          </a>
+        </p>
+        <p>LinkedIn:
+          <a href="https://www.linkedin.com/in/andrew-g-7260879b/" target="_blank" rel="noopener">
+            linkedin.com/in/andrew-g-7260879b/
+          </a>
+        </p>
+      </section>
+    </div>
+  </section>
 
-<script>
-  const toggleBtn = document.getElementById('theme-toggle');
-  toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    if (document.body.classList.contains('dark-mode')) {
-      toggleBtn.textContent = '☀️';
-    } else {
-      toggleBtn.textContent = '☽';
-    }
-  });
-</script>
+  <!-- === OPTIONAL FOOTER === -->
+  <footer>
+    &copy; <%= Time.current.year %> Andrew Godeke. All rights reserved.
+  </footer>
+
+  <!-- === THEME TOGGLE SCRIPT === -->
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '☽';
+    });
+  </script>
 </body>
 </html>
