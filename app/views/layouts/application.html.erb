@@ -10,6 +10,35 @@
   </head>
 
   <body>
+    <!-- Navbar Partial (contains all links including About and your dark mode button) -->
+    <%= render "layouts/navbar" %>
+
+    <!-- Main Page Content -->
     <%= yield %>
+
+    <!-- Dark Mode Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggle = document.getElementById("dark-mode-toggle");
+        const body = document.body;
+
+        // Only apply dark mode if previously saved
+        if (localStorage.getItem("theme") === "dark") {
+          body.classList.add("dark-mode");
+        }
+
+        // Toggle dark mode on button click
+        if (toggle) {
+          toggle.addEventListener("click", () => {
+            body.classList.toggle("dark-mode");
+            if (body.classList.contains("dark-mode")) {
+              localStorage.setItem("theme", "dark");
+            } else {
+              localStorage.setItem("theme", "light");
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>
