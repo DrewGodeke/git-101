@@ -9,22 +9,7 @@
 </head>
 
 <body>
-  <!-- === NAVBAR === -->
-  <nav class="navbar">
-    <div class="navbar-left">
-      <%= link_to root_path, class: 'home-btn', title: 'Home' do %>
-        <svg class="home-icon" viewBox="0 0 24 24">
-          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-        </svg>
-      <% end %>
-      <button id="theme-toggle">☽</button>
-    </div>
-    <div class="navbar-buttons">
-      <%= link_to 'About', about_path, class: 'navbar-btn' %>
-      <%= link_to 'Projects', projects_path, class: 'navbar-btn' %>
-      <%= link_to 'Contact', contact_path, class: 'navbar-btn' %>
-    </div>
-  </nav>
+  <!-- Navbar is rendered automatically via layout -->
 
   <!-- === CONTACT HERO SECTION === -->
   <section class="hero-about">
